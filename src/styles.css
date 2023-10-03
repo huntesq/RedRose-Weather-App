@@ -21,8 +21,13 @@ li {
   margin-top: -50px;
 }
 
-#picAndTemp {
+#pic {
   margin-top: 20px;
-  margin-left: -9px;
+  margin-left: 20px;
   font-size: larger;
+}
+
+h5 {
+  margin-right: 100px;
+  margin-top: 20px;
 }
