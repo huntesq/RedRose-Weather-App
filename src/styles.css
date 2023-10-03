@@ -1,3 +1,28 @@
-h1 {
-  color: blueviolet;
+.container {
+  border: 1px solid color;
+  border-radius: 10px;
+}
+
+.weatherApp {
+  margin-top: 200px;
+  max-width: 600px;
+  padding: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+#listInfo {
+  margin-left: -30px;
+}
+
+#listInfo2 {
+  margin-top: -50px;
+}
+
+#picAndTemp {
+  margin-top: 20px;
+  margin-left: -9px;
+  font-size: larger;
 }
