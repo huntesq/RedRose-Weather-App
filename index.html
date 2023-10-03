@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -17,20 +18,20 @@
       <link rel="stylesheet" href="src/index.js" />
       <link rel="stylesheet" href="src/styles.css" />
 
-      <h1>Johannesburg</h1>
+      <h1 id="city">Johannesburg</h1>
       <ul id="listInfo">
         <li>Tuesday 22:55</li>
-        <li >Clear Night</li>
+        <li id="description" ></li>
         <div class="row">
           <div class="col-6" >
             <img src="src/sunny.png" alt="sunny emoji" id="pic">
-           <h5> 12°C | 59°F</h5>
+           <h5 id="temperature"> °C | °F</h5>
           </div>
           <div class="col-6">
             <ul id="listInfo2">
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 73%</li>
-              <li>Wind: 2km/h</li>
+             
+             <span id="humidity"> <li>72%</li></span>
+              <span id="wind"><li></li>2km/h</span>
             </ul>
           </div>
         </div>
@@ -41,6 +42,7 @@
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"
+        
       ></script>
     </div>
   </body>
