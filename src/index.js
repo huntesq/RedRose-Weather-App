@@ -47,7 +47,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "bd3bb6534458ba51b48c49f5155745b6";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+function handleSubmit(event) {
+  event.preventDefault();
+  letCityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+search("Johannesburg");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+function search(city) {
+  let apiKey = "bd3bb6534458ba51b48c49f5155745b6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Johannesburg&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
