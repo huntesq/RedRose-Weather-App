@@ -49,8 +49,8 @@ function displayTemperature(response) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  letCityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  let CityInputElement = document.querySelector("#city-input");
+  search(CityInputElement.value);
 }
 
 search("Johannesburg");
@@ -60,7 +60,7 @@ form.addEventListener("submit", handleSubmit);
 
 function search(city) {
   let apiKey = "bd3bb6534458ba51b48c49f5155745b6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Johannesburg&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
 }
