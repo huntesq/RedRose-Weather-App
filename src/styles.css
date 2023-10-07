@@ -1,12 +1,14 @@
 .container {
-  border: 1px solid color;
-  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid #354767;
+  border-radius: 20px;
+  max-width: 600px;
 }
 
 .weatherApp {
-  margin-top: 200px;
+  margin-top: 20px;
   max-width: 600px;
-  padding: 20px;
+  padding-left: -50px;
 }
 
 li {
@@ -14,15 +16,20 @@ li {
 }
 
 #listInfo {
-  margin-left: -30px;
+  margin-left: -20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: grey;
+  margin-left: -55px;
 }
 
 #listInfo2 {
-  margin-top: -50px;
+  position: relative;
+  margin-top: -313px;
+  margin-left: 150px;
 }
 
 #icon {
-  margin-top: 20px;
+  margin-top: 88px;
   margin-left: 20px;
   font-size: larger;
 }
@@ -30,4 +37,34 @@ li {
 h5 {
   margin-right: 100px;
   margin-top: 20px;
+}
+
+#search-button {
+  position: relative;
+  margin-left: 420px;
+  margin-top: -69px;
+}
+
+#temperature {
+  position: relative;
+  margin-right: 800px;
+}
+
+.info-container {
+  position: relative;
+  margin-left: 150px;
+}
+
+#city {
+  font-size: 40px;
+  margin-left: -25px;
+  font-weight: bold;
+}
+
+#text {
+  margin-left: 90px;
+}
+
+#description {
+  text-transform: capitalize;
 }
