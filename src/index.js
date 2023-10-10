@@ -25,6 +25,37 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes} `;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class = "row">` === "";
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+        
+          
+            <div class="weather-forecast-date">${day}</div>
+
+            <img
+              src="https://openweathermap.org/img/wn/02d@2x.png"
+              alt="image"
+              width="50"
+              class="forecast-icon"
+            />
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">23°</span>
+              <span class="weather-forecast-temperature-min">17°</span>
+            </div>
+          </div>
+        </div>`;
+    forecastHTML = forecastHTML + `</div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -54,6 +85,7 @@ function handleSubmit(event) {
 }
 
 search("Johannesburg");
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
