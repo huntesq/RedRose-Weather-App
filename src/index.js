@@ -27,7 +27,7 @@ function formatDate(timestamp) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class = "row">` === "";
+  let forecastHTML = `<div class = "row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   days.forEach(function (day) {
     forecastHTML =
@@ -48,13 +48,13 @@ function displayForecast() {
               <span class="weather-forecast-temperature-max">23°</span>
               <span class="weather-forecast-temperature-min">17°</span>
             </div>
-          </div>
         </div>`;
-    forecastHTML = forecastHTML + `</div>`;
   });
-
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+forecastElement.innerHTML = forecastHTML;
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
