@@ -1,18 +1,11 @@
 function formatDate(timestamp) {
   // `${day} ${hours}:${minutes} `
-  let date = new Date(timestamp);
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  return days[day];
 
   if (hours < 10) {
     hours = `0${hours} `;
@@ -25,28 +18,39 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes} `;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class = "row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
           <div class="col-2">
         
           
-            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-date">${formatDay(
+              forecastDay.dt
+            )}</div>
 
             <img
-              src="https://openweathermap.org/img/wn/02d@2x.png"
+              src="https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
               alt="image"
               width="50"
               class="forecast-icon"
             />
             <div class="weather-forecast-temperature">
-              <span class="weather-forecast-temperature-max">23°</span>
-              <span class="weather-forecast-temperature-min">17°</span>
+              <span class="weather-forecast-temperature-max">${Math.round(
+                forecastDay.temp.max
+              )}</span>
+              <span class="weather-forecast-temperature-min">${Math.round(
+                forecastDay.temp.min
+              )}</span>
             </div>
         </div>`;
   });
